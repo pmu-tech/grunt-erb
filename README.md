@@ -6,6 +6,8 @@ A plugin to integrate erb compilation into your grunt workflow
 
 Run `npm install grunt-erb`
 
+Important note : you need to have ruby installed and to be able to use `erb` command manually. This plugin is just a wrapper around this command.
+
 ## Usage
 
 ```

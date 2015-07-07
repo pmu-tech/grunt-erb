@@ -9,6 +9,9 @@
   "author": "",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": "~0.4.5",
+    "chai": "~3.0.0",
+    "sinon": "~1.15.4",
+    "grunt-mocha-cli": "~1.13.1"
   }
 }
