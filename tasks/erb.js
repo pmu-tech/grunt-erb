@@ -6,6 +6,7 @@ module.exports = function (grunt) {
 	var description = "Wrapper around the erb command line";
 
 	grunt.registerMultiTask('erb', description, function () {
+
 		this.files.forEach(function (file) {
 			var src = file.src;
 			var rubyFile = file.rubyFile;
@@ -29,6 +30,7 @@ module.exports = function (grunt) {
 				});
 			}
 		});
+
 	});
 
 };

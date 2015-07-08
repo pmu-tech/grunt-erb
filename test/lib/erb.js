@@ -1,7 +1,6 @@
-var assert = require('chai').assert;
-var exec = require('child_process').exec;
-
-var erb = require('../../lib/erb');
+var assert = require('chai').assert,
+	exec = require('child_process').exec,
+	erb = require('../../lib/erb');
 
 describe('lib/erb', function () {
 	describe('#handleCmdOuput', function () {

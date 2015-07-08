@@ -1,5 +1,5 @@
-var assert = require('chai').assert;
-var string = require('../../util/string');
+var assert = require('chai').assert,
+	string = require('../../util/string');
 
 describe('util/string', function () {
 	describe('#isEmpty', function () {
