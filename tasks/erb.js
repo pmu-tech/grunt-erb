@@ -25,8 +25,11 @@ module.exports = function (grunt) {
 				src.forEach(function (srcPath) {
 					grunt.log.write('Compiling ' + srcPath + ' using config file ' + rubyFile + ' into ' + dest);
 
-					// TODO : link errors raised by erb command to grunt.log
-					ERB.compileTemplate(rubyFile, srcPath, dest);
+					try{
+						ERB.compileTemplate(rubyFile, srcPath, dest);
+					} catch(e) {
+						grunt.log.error('Error while compilation. srcPath: ' + srcPath + ', config file: ' + rubyFile + ', destFile: ' + dest, e);
+					}
 				});
 			}
 		});
