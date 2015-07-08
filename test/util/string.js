@@ -8,5 +8,8 @@ describe('util/string', function () {
 			assert(true, string.isEmpty(''));
 			assert(true, string.isEmpty('       '));
 		});
+		it('should return false', function () {
+			assert.isFalse(string.isEmpty('myString'));
+		});
 	});
 });
