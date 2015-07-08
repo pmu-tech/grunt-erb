@@ -14,12 +14,12 @@ module.exports = function (grunt) {
             configApp: {
                 src: './samples/config.tpl',
                 rubyFile: './samples/config.rb',
-                dest: './samples/config-out.js'
+                dest: './samples/output/config-out.js'
             },
             otherConf: {
                 src: './samples/other-conf.tpl',
                 rubyFile: './samples/other-conf.rb',
-                dest: './samples/other-conf.js'
+                dest: './samples/output/other-conf.js'
             }
         }
     });

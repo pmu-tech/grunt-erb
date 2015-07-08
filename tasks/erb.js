@@ -1,4 +1,5 @@
-var ERB = require('../lib/erb');
+var ERB = require('../lib/erb'),
+    Path = require('path');
 
 module.exports = function (grunt) {
 
@@ -9,6 +10,7 @@ module.exports = function (grunt) {
             var src = file.src;
             var rubyFile = file.rubyFile;
             var dest = file.dest;
+            var destFolder = Path.dirname(dest);
 
             if (src.length === 0) {
                 grunt.log.warn('No src path specified');
@@ -17,6 +19,8 @@ module.exports = function (grunt) {
             } else if (!dest) {
                 grunt.log.warn('No dest path specified');
             } else {
+                grunt.file.mkdir(destFolder);
+
                 src.forEach(function (srcPath) {
                     grunt.log.write('Compiling ' + srcPath + ' using config file ' + rubyFile + ' into ' + dest);
 
