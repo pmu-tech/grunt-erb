@@ -1,13 +1,13 @@
 {
   "name": "grunt-erb",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Grunt plugin which wraps the erb command into a grunt task",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/**/*.js"
   },
   "author": "",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "devDependencies": {
     "grunt": "~0.4.5",
     "chai": "~3.0.0",
