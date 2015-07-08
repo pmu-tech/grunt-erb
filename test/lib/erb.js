@@ -1,6 +1,5 @@
 var assert = require('chai').assert;
 var exec = require('child_process').exec;
-var sys = require('sys');
 
 var erb = require('../../lib/erb');
 
