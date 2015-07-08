@@ -1,7 +1,7 @@
 var assert = require('chai').assert,
 	sinon = require('sinon'),
 	sys = require('sys'),
-	logger = require('../../util/logger');
+	logger = require('../../tasks/util/logger');
 
 describe('util/logger', function () {
 	describe('#handleCmdOutput', function () {

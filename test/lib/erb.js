@@ -1,7 +1,7 @@
 var assert = require('chai').assert,
 	sinon = require('sinon'),
 	process = require('child_process'),
-	erb = require('../../lib/erb');
+	erb = require('../../tasks/lib/erb');
 
 describe('lib/erb', function () {
 	describe('#handleCmdOuput', function () {

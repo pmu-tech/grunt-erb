@@ -12,14 +12,14 @@ module.exports = function (grunt) {
 		},
 		erb: {
 			configApp: {
-				src: './samples/config.tpl',
-				rubyFile: './samples/config.rb',
-				dest: './samples/output/config-out.js'
+				src: './test/samples/config.tpl',
+				rubyFile: './test/samples/config.rb',
+				dest: './test/samples/output/config-out.js'
 			},
 			otherConf: {
-				src: './samples/other-conf.tpl',
-				rubyFile: './samples/other-conf.rb',
-				dest: './samples/output/other-conf.js'
+				src: './test/samples/other-conf.tpl',
+				rubyFile: './test/samples/other-conf.rb',
+				dest: './test/samples/output/other-conf.js'
 			}
 		}
 	});

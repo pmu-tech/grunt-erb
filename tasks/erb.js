@@ -1,4 +1,4 @@
-var ERB = require('../lib/erb'),
+var ERB = require('./lib/erb'),
 	path = require('path');
 
 module.exports = function (grunt) {
