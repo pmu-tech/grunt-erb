@@ -23,7 +23,6 @@ describe('lib/erb', function () {
 			}, 'No destination specified');
 		});
 
-		// TODO : add a test when every parameters are correct
 		it('should execute the correct command given valid parameters', sinon.test(function () {
 			var execStub = this.stub(process, 'exec');
 
