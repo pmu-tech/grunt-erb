@@ -1,31 +1,31 @@
 {
-	"name": "grunt-erb",
-	"description": "Grunt plugin which wraps the erb command into a grunt task",
-	"version": "0.0.1",
-	"homepage": "https://github.com/pmu-tech/grunt-erb",
-	"author": "pmu-tech",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/pmu-tech/grunt-erb.git"
-	},
-	"bugs": {
-		"urls": "https://github.com/pmu-tech/grunt-erb/issues"
-	},
-	"scripts": {
-		"test": "mocha test/**/*.js"
-	},
-	"license": "MIT",
-	"devDependencies": {
-		"grunt": "~0.4.5",
-		"chai": "~3.0.0",
-		"sinon": "~1.15.4",
-		"grunt-mocha-cli": "~1.13.1"
-	},
-	"peerDependencies": {
-		"grunt": "~0.4.5"
-	},
-	"keywords": [
-		"gruntplugin",
-		"erb"
-	]
+  "name": "grunt-erb",
+  "description": "Grunt plugin which wraps the erb command into a grunt task",
+  "version": "0.0.1",
+  "homepage": "https://github.com/pmu-tech/grunt-erb",
+  "author": "pmu-tech",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pmu-tech/grunt-erb.git"
+  },
+  "bugs": {
+    "urls": "https://github.com/pmu-tech/grunt-erb/issues"
+  },
+  "scripts": {
+    "test": "mocha test/**/*.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "~3.0.0",
+    "grunt": "~0.4.5",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "sinon": "~1.15.4"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin",
+    "erb"
+  ]
 }

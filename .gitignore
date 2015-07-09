@@ -1,4 +1,3 @@
 node_modules/
-samples/output/
-samples/output/
+fixtures/tmp/
 .idea

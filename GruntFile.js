@@ -2,27 +2,27 @@
 
 module.exports = function (grunt) {
 
-	grunt.loadNpmTasks('grunt-mocha-cli');
+	grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
 	grunt.loadTasks('tasks');
 
 	grunt.initConfig({
-		"mochacli": {
-			src: 'test/**/*.js'
-		},
 		erb: {
-			configApp: {
-				src: './test/samples/config.tpl',
-				rubyFile: './test/samples/config.rb',
-				dest: './test/samples/output/config-out.js'
+			simpleConf: {
+				src: './test/fixtures/src/config.tpl',
+				rubyFile: './test/fixtures/src/config.rb',
+				dest: './test/fixtures/tmp/config-out.js'
 			},
-			otherConf: {
-				src: './test/samples/other-conf.tpl',
-				rubyFile: './test/samples/other-conf.rb',
-				dest: './test/samples/output/other-conf.js'
+			nonExistingDestDir: {
+				src: './test/fixtures/src/other-conf.tpl',
+				rubyFile: './test/fixtures/src/other-conf.rb',
+				dest: './test/fixtures/tmp/new/other-conf.js'
 			}
+		},
+		nodeunit: {
+			tests: ['test/**/*_test.js']
 		}
 	});
 
-	grunt.registerTask('test', ['mochacli']);
+	grunt.registerTask('test', ['nodeunit']);
 };
