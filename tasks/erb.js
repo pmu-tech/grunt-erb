@@ -1,5 +1,5 @@
 var ERB = require('../lib/erb'),
-	Path = require('path');
+	path = require('path');
 
 module.exports = function (grunt) {
 
@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 			var src = file.src;
 			var rubyFile = file.rubyFile;
 			var dest = file.dest;
-			var destFolder = Path.dirname(dest);
+			var destFolder = path.dirname(dest);
 
 			if (src.length === 0) {
 				grunt.log.warn('No src path specified');

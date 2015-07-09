@@ -1,5 +1,6 @@
 var assert = require('chai').assert;
-var exec = require('child_process').exec;
+var sinon = require('sinon');
+var process = require('child_process');
 
 var erb = require('../../lib/erb');
 
@@ -24,5 +25,14 @@ describe('lib/erb', function () {
 		});
 
 		// TODO : add a test when every parameters are correct
+		it('should execute the correct command given valid parameters', sinon.test(function () {
+			var execStub = this.stub(process, 'exec');
+
+			erb.compileTemplate('./file.rb', 'template.erb', 'result.js');
+
+			assert.equal(1, execStub.callCount);
+			assert.equal("erb -r './file.rb' template.erb > result.js", execStub.firstCall.args[0]);
+		}));
+
 	});
 });
