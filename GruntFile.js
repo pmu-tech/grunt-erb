@@ -3,10 +3,12 @@
 module.exports = function (grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 
 	grunt.loadTasks('tasks');
 
 	grunt.initConfig({
+		clean: ['test/fixtures/tmp'],
 		erb: {
 			simpleConf: {
 				src: './test/fixtures/src/config.tpl',
@@ -24,5 +26,5 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('test', ['nodeunit']);
+	grunt.registerTask('test', ['clean', 'erb', 'nodeunit']);
 };
