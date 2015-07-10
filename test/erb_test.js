@@ -1,7 +1,5 @@
 var grunt = require('grunt'),
-	sinon = require('sinon'),
 	path = require('path'),
-	ERB = require('../tasks/lib/erb'),
 	exec = require('child_process').exec;
 
 var read = function () {
