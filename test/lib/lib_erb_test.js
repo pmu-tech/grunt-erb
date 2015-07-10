@@ -3,27 +3,6 @@ var sinon = require('sinon'),
 	erb = require('../../tasks/lib/erb');
 
 exports.erb = {
-	noRubyFilePath: function (test) {
-		test.throws(function() {
-			erb.compileTemplate('/file.rb', 'template.erb');
-		});
-
-		test.done();
-	},
-	noTplFilePath: function (test) {
-		test.throws(function () {
-			erb.compileTemplate('file.rb');
-		});
-
-		test.done();
-	},
-	noDestPath: function (test) {
-		test.throws(function () {
-			erb.compileTemplate('file.rb', 'template.erb');
-		});
-
-		test.done();
-	},
 	withValidParams: function (test) {
 		var execStub = sinon.stub(process, 'exec');
 

@@ -17,22 +17,23 @@ module.exports = function (grunt) {
 			var destFolder = path.dirname(dest);
 
 			if (src.length === 0) {
-				grunt.log.warn('No src path specified');
+				grunt.fail.fatal('No src path specified');
 			} else if (!rubyFile) {
-				grunt.log.warn('No config file specified');
+				grunt.fail.fatal('No ruby file specified');
 			} else if (!dest) {
-				grunt.log.warn('No dest path specified');
+				grunt.fail.fatal('No dest path specified');
 			} else {
 				grunt.file.mkdir(destFolder);
 
 				src.forEach(function (srcPath) {
-					grunt.log.write('Compiling ' + srcPath + ' using config file ' + rubyFile + ' into ' + dest);
+					grunt.log.write('Compiling ' + srcPath + ' using config file ' + rubyFile + ' into ' + dest + '\n');
 
-					try{
-						promises.push(ERB.compileTemplate(rubyFile, srcPath, dest));
-					} catch(e) {
-						grunt.log.error('Error while compilation. srcPath: ' + srcPath + ', config file: ' + rubyFile + ', destFile: ' + dest, e);
-					}
+					var promise = ERB.compileTemplate(rubyFile, srcPath, dest)
+						.catch(function (e) {
+							grunt.fail.fatal('Error while compilation. srcPath: ' + srcPath + ', ruby file: ' + rubyFile + ', destFile: ' + dest + '\n' + e);
+						});
+
+					promises.push(promise);
 				});
 			}
 		});
@@ -41,7 +42,6 @@ module.exports = function (grunt) {
 		Promise.all(promises).then(function () {
 			done();
 		});
-
 	});
 
 };
