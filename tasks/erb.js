@@ -1,4 +1,5 @@
 var ERB = require('./lib/erb'),
+	Promise = require('bluebird'),
 	path = require('path');
 
 module.exports = function (grunt) {
@@ -6,6 +7,8 @@ module.exports = function (grunt) {
 	var description = "Wrapper around the erb command line";
 
 	grunt.registerMultiTask('erb', description, function () {
+		var done = this.async();
+		var promises = [];
 
 		this.files.forEach(function (file) {
 			var src = file.src;
@@ -26,12 +29,17 @@ module.exports = function (grunt) {
 					grunt.log.write('Compiling ' + srcPath + ' using config file ' + rubyFile + ' into ' + dest);
 
 					try{
-						ERB.compileTemplate(rubyFile, srcPath, dest);
+						promises.push(ERB.compileTemplate(rubyFile, srcPath, dest));
 					} catch(e) {
 						grunt.log.error('Error while compilation. srcPath: ' + srcPath + ', config file: ' + rubyFile + ', destFile: ' + dest, e);
 					}
 				});
 			}
+		});
+
+
+		Promise.all(promises).then(function () {
+			done();
 		});
 
 	});
