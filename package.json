@@ -1,7 +1,7 @@
 {
   "name": "grunt-erb",
   "description": "Grunt plugin which wraps the erb command into a grunt task",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/pmu-tech/grunt-erb",
   "author": "pmu-tech",
   "repository": {
