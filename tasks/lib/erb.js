@@ -1,5 +1,4 @@
-var process = require('child_process'),
-	Promise = require('bluebird');
+var process = require('child_process');
 
 function compileTemplate(rubyFilePath, templateFilePath, destPath) {
 	var cmd = "erb -r " + "'" + rubyFilePath + "'" + " " + templateFilePath + " > " + destPath;

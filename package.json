@@ -28,8 +28,5 @@
   "keywords": [
     "gruntplugin",
     "erb"
-  ],
-  "dependencies": {
-    "bluebird": "^2.9.33"
-  }
+  ]
 }
