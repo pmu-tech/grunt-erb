@@ -1,5 +1,4 @@
 var ERB = require('./lib/erb'),
-	Promise = require('bluebird'),
 	path = require('path');
 
 module.exports = function (grunt) {

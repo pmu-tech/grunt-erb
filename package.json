@@ -23,13 +23,13 @@
     "sinon": "~1.15.4"
   },
   "peerDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": "^1.0.0"
   },
   "keywords": [
     "gruntplugin",
     "erb"
   ],
-  "dependencies": {
-    "bluebird": "^2.9.33"
+  "engines": {
+    "node": ">0.12"
   }
 }
