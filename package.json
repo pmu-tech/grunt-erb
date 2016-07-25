@@ -12,7 +12,7 @@
     "urls": "https://github.com/pmu-tech/grunt-erb/issues"
   },
   "scripts": {
-    "test": "mocha test/**/*.js"
+    "test": "grunt test"
   },
   "license": "MIT",
   "devDependencies": {
